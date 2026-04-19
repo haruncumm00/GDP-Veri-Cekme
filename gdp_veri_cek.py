@@ -4,7 +4,7 @@ import wbgapi as wb
 ulkeler = ['TUR', 'USA', 'DEU', 'IND']
 gostergeler = {'NY.GDP.MKTP.CD': 'GDP (USD)', 'IS.AIR.PSGR': 'Air Passengers Carried'}
 
-print("Dünya Bankası'ndan veriler çekiliyor, lütfen bekleyin...")
+print("Fetching data from the World Bank, please wait...")
 df = wb.data.DataFrame(list(gostergeler.keys()), ulkeler, time=range(1960, 2023), numericTimeKeys=True)
 
 # 1. AŞAMA: Yatay gelen yılları dikey formata (melt) çeviriyoruz
@@ -28,7 +28,7 @@ df = df[['Country', 'Year', 'GDP (USD)', 'Air Passengers Carried']]
 df = df.sort_values(by=['Country', 'Year']).reset_index(drop=True)
 
 # İstatistikleri ekrana yazdırma
-print("\n--- Veri Seti İstatistiksel Özeti ---")
+print("\n--- Dataset Statistical Summary ---")
 print(df[['GDP (USD)', 'Air Passengers Carried']].describe())
 print(f"\nSkewness (Çarpıklık):\n{df[['GDP (USD)', 'Air Passengers Carried']].skew()}")
 print(f"\nKurtosis (Basıklık):\n{df[['GDP (USD)', 'Air Passengers Carried']].kurtosis()}\n")
