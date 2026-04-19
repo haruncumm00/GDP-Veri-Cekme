@@ -41,4 +41,5 @@ df['Air Passengers Carried'] = df['Air Passengers Carried'].apply(lambda x: f"{x
 dosya_adi = "math202_project_kusursuz_tablo.xlsx"
 df.to_excel(dosya_adi, index=False)
 
-print(f"İşlem tamamlandı! Veriler sütunlara ayrılmış saf Excel formatında '{dosya_adi}' olarak kaydedildi.")
+print(f"Process completed! Data has been saved to columns in pure Excel format as '{dosya_adi}'.")
+# Veri çekme işlemleri eklendi
