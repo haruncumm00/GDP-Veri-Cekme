@@ -42,3 +42,4 @@ dosya_adi = "math202_project_kusursuz_tablo.xlsx"
 df.to_excel(dosya_adi, index=False)
 
 print(f"İşlem tamamlandı! Veriler sütunlara ayrılmış saf Excel formatında '{dosya_adi}' olarak kaydedildi.")
+# Veri çekme işlemleri eklendi
